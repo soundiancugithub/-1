@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>אתיקה בבינה מלאכותית – משרד החינוך</title>
+
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css"
+          integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU"
+          crossorigin="anonymous">
+
+    <!-- Styles from the course -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font (Rubik) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;900&display=swap"
+            rel="stylesheet">
+</head>
+
+<body>
+<!-- Skip link -->
+<a class="skip-link" href="#main-content">דלגי לתוכן המרכזי</a>
+
+<!-- Header + Navbar (המבורגר במובייל) -->
+<header class="sticky-top border-bottom bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#hero">
+                אתיקה בבינה מלאכותית
+            </a>
+
+            <!-- Hamburger button -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="מתג ניווט">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">ראשי</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#units">יחידות הלימוד</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#survey">שביעות רצון</a>
+                    </li>
+                </ul>
+
+                <!-- Search in navbar (מחשב/טאבלט) -->
+                <form class="d-none d-sm-flex" role="search">
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               id="search-input"
+                               placeholder="חיפוש יחידות..."
+                               aria-label="חיפוש יחידות לימוד" />
+                        <button class="btn btn-outline-light"
+                                type="button"
+                                id="search-button">
+                            חיפוש
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main content -->
+<main id="main-content">
+
+    <!-- Hero / Header section -->
+    <section id="hero" class="py-5 text-white"
+             style="
+                background-image:
+                  linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)),
+                  url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-HhKHBqhj8ubCOEHcvJqAScTrLpqctwv535SiFV-ziinat9FZId5-OnD_D4UCTTLDn3rdtOzNDZviwq5DqDq6wVa_8Qv2GKvN2qPbOBMQUeur2rrz-FoVG9hRUUyONkCHcxTjIiBrpbkOXYHrOqJcsmWcAFNsDPe29XHMSxSRPGDf1NAtqqr3dw-PcZF4YsQ9Um_jLeUyz2f0tFwkM7qjCcN_O6WrM5TxsIs6oO2ld4ZXTXdnJCI-F2-tftcfjVR8nHvND0CPzoY');
+                background-size: cover;
+                background-position: center;
+             ">
+        <div class="container">
+            <div class="row align-items-end" style="min-height: 260px;">
+                <div class="col-12 col-md-8">
+                    <h1 class="display-5 fw-bold mb-2">
+                        אתיקה בבינה מלאכותית
+                    </h1>
+                    <p class="lead mb-0">
+                        קורס מקוון – משרד החינוך
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Units section -->
+    <section id="units" class="py-5">
+        <div class="container">
+
+            <header class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+                <div>
+                    <h2 class="h3 mb-1">יחידות הלימוד</h2>
+                    <p class="mb-0">
+                        שבע יחידות לימוד בנושא אתיקה בבינה מלאכותית.
+                    </p>
+                </div>
+
+                <!-- Search (מובייל) -->
+                <form class="d-flex d-sm-none mt-2 mt-md-0" role="search">
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               id="search-input-mobile"
+                               placeholder="חיפוש יחידות..."
+                               aria-label="חיפוש יחידות לימוד" />
+                        <button class="btn btn-outline-secondary"
+                                type="button"
+                                id="search-button-mobile">
+                            חיפוש
+                        </button>
+                    </div>
+                </form>
+            </header>
+
+            <!-- הודעת "לא נמצא" -->
+            <div id="no-results" class="alert alert-warning d-none" role="status" aria-live="polite">
+                לא נמצא תוכן מתאים
+            </div>
+
+            <!-- Grid of 7 units -->
+            <div class="row g-4" id="units-grid">
+
+                <!-- Unit 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="מבוא לבינה מלאכותית ואתיקה">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TVEWmWpgB-2E5kiU5OZT3JVS7gNJaIep1JdTMgqvyaJDd_GUDpe1B0-71ktr_cv_Zk3TMgdLAkIvjRMLx62GMstG0_O7h2d8tsfbh4PA0q0X_wE3bcXM7y34ch0olc09lmVk5QaznJWAJCDq7wdZ6MCiV-Zsv8xpec3ZTzEGaTzR1IWQ4kGKeaeR1WHaYs7u2zL6w0Ui-1aedgJdDY58Ez0pF-u9x5ky8BzDhbRpeWOIIyCfEKV70nW-ZeiGUR52NfAHIeYxYIo"
+                             class="card-img-top"
+                             alt="תמונת אווירה – מבוא לבינה מלאכותית ואתיקה">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 1: מבוא לבינה מלאכותית ואתיקה
+                            </h3>
+                            <p class="card-text mb-0">
+                                מהי בינה מלאכותית, למה היא משנה את העולם ואיך נכנסת השאלה האתית לתמונה.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="פרטיות ואבטחת מידע בעידן ה-AI">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHU6XV1eU5YLUEjLXn6R0CHru16ILru7lcWZRz3pWn-gGX2Qgo0nMIyW8avCMeivVu-vurxPvLbxdEz3vlFo1Lj_WAOLRaiqjEP5Q7rCAW2254Cknc3E_j0SRENIA0WIgtelbelbdGR_a3TXUPur_lB3owgeaVVM39zR0ruvg2s4pKJRmAbwOvTDVw_8Xh43wRi0pu5OD9FHR7ucfA1Pr7GtrHO9aqOBi2U7yx7OHHY4sxffSH8odsfuMzcbNiVSUNZmBdaIYu_Wo"
+                             class="card-img-top"
+                             alt="תמונת אווירה – פרטיות ואבטחת מידע">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 2: פרטיות ואבטחת מידע בעידן ה-AI
+                            </h3>
+                            <p class="card-text mb-0">
+                                איך שומרים על מידע אישי, מה הסיכונים באיסוף נתונים ומה חובת הארגונים.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="הטיות אלגוריתמיות וצדק חברתי">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBiqvfpoJQMow_bsymQzhcJh-OL4EdDGEX44Y9nNp8gAtMCLuVoRnAL1GW09S-lXsh0TSPkV9mxIWcA2yf7i3tbmO9VZIX62RaUsfT8S1g47_G3ch1aWqoWlxhIT_9W_x5X3QE9Z7Q1KqKZL1ChWdWXorpMN58TuLPSDhjvgvShRPBtfeMVN21f0Hpz8LdcMLpMWQbmE8L1SN6wN3zvGcbsAD8TcnH9UkE_IG3wB05Q95VWzySls-8GvVTu4-1d7C5u3_vhSP4FdY"
+                             class="card-img-top"
+                             alt="תמונת אווירה – הטיות אלגוריתמיות">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 3: הטיות אלגוריתמיות וצדק חברתי
+                            </h3>
+                            <p class="card-text mb-0">
+                                כיצד אלגוריתמים עלולים לשמר אי־שוויון וכיצד ניתן לצמצם את ההטיות.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 4 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="אחריות, אמינות ושימוש מודע ב-AI">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSyJsnavO-72lprhZQzbSd2BoNqDGnZJLsY-4GGFR46NRLYczEGAXw2rNEyTtdR-mXXNOUFmxTUjJcio7zLURpKP4eU5a9iKEZUdwEizVYXJgFzc6XLyG8lZZWZu5CZnid3LkIKQaiTcT3TEnQ0VkXZhxpEfPJ4x13ue1NhYFRKoYfNfG5HFEdrB_7caj7H_lYHk2keBllpHLodaf1zAWzbe8pFPTuOiqYERD8tDUN5327qifbZ-Y3XSgIsphSvsJ_iVpfx_TFaKM"
+                             class="card-img-top"
+                             alt="תמונת אווירה – אחריות ושימוש מודע">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 4: אחריות, אמינות ושימוש מודע ב-AI
+                            </h3>
+                            <p class="card-text mb-0">
+                                מי אחראי על החלטות של מערכות AI ואיך משתמשים בהן באופן מושכל וזהיר.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 5 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="זכויות יוצרים ואתיקה של יצירה בעזרת AI">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRkiDk1JYuTFN6dZxzLXN486S2Bsr9nJkh6bXuVGN7R-J6cNauG_EfDbCu5gTifRL9ddNY73AD-jRUe_BpzpX90_4OUzUi9jZ9CI-WiC-rY4klqjp7I6M9MPKA30G60pt6vkfhOBdZcE1497Bxy2D3Sbqs1VffcAe0ahFVAYyNxj-HhNHJvyGYQP6AWh9Itvo2G7XlGOedQzSkBmVo9FZzuwvXRmLj6DS0SDs9lS6yCSNddcrCXG5LXIeK-KkZArTxp_cPc2yU2O8"
+                             class="card-img-top"
+                             alt="תמונת אווירה – זכויות יוצרים">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 5: זכויות יוצרים ואתיקה של יצירה בעזרת AI
+                            </h3>
+                            <p class="card-text mb-0">
+                                שאלות של מקוריות, קרדיט ושימוש הוגן כאשר כלים אוטומטיים יוצרים תוכן.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 6 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="השפעת ה-AI על חברה, תעסוקה ודמוקרטיה">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xVpi-PKggTSSQPKZ8xkwjdQzeEBjN9b-bkYvcdFGCchYenN5EswFwoC4CJP7nOfsRQqh-9XstMolBUCbwMAJ9zEprduw1VShBeg07xGnubk50GfYgAAczSjLZy-P-0ZkE-6WiINdFIhrf1zab5KENKEB_bcDa4-ppNpVZHIf6yfDYkpHZqmrUrUKm_KVRdJsRO302AUGv3K53W3HvDuym0689ci7rl901_JavaC5hHrUaj9FnZYeY1tUWs9Ci3q9--Jec785Kgs"
+                             class="card-img-top"
+                             alt="תמונת אווירה – השפעת AI על חברה ותעסוקה">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 6: השפעת ה-AI על חברה, תעסוקה ודמוקרטיה
+                            </h3>
+                            <p class="card-text mb-0">
+                                מה קורה לשוק העבודה, להשתתפות האזרחית ולשיח הציבורי בעידן האוטומציה.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Unit 7 -->
+                <div class="col-12 col-sm-6 col-lg-3 unit-card"
+                     data-unit-title="ממשליות ורגולציה של מערכות AI">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHIZ8gGr5R4dpRsBlk9uyqECo4ZLjHAnqMa5Vy6WCJTD3KIDmyg4Av0rq_jUM0btOyI1Mcj-8A4Pt9TSc7eHm9s5GdYLC9J8Kn3WrlGvKnRmp9Lg3CJNL2_wr4EQM8nZNAYyjYH_Bl9Tbiaz9fT-3yuxX9zDl9a2HgbxteF5OznYYdmjaiRtXHkhis-lyeECGLTIiLsRia8UqVpJwFjrhfhLN7ReYO7sbVXfHd6M16DmUJ4peG26_HHteWrl9xVhFvS6OX92oJHb4"
+                             class="card-img-top"
+                             alt="תמונת אווירה – ממשליות ורגולציה">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">
+                                יחידה 7: ממשליות ורגולציה של מערכות AI
+                            </h3>
+                            <p class="card-text mb-0">
+                                איך מדינות וגופים בינלאומיים מנסים להסדיר את תחום ה-AI ואת גבולות השימוש בו.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Satisfaction survey section -->
+    <section id="survey" class="py-5">
+        <div class="container">
+            <header class="mb-4">
+                <h2 class="h3 mb-1">שביעות רצונכם חשובה לנו</h2>
+                <p class="mb-0">
+                    מלאו את הטופס האנונימי הבא וסייעו לנו להמשיך לצור קורסים משמעותיים
+                </p>
+            </header>
+
+            <form id="survey-form" class="border rounded-3 p-4 bg-white">
+                <!-- Course name (read-only) -->
+                <div class="mb-3">
+                    <label class="form-label" for="course-name">
+                        שם הקורס
+                    </label>
+                    <input type="text"
+                           class="form-control"
+                           id="course-name"
+                           value="אתיקה בבינה מלאכותית"
+                           readonly />
+                </div>
+
+                <!-- Free text feedback -->
+                <div class="mb-4">
+                    <label class="form-label" for="feedback-text">
+                        נשמח לשמוע את דעתכם
+                    </label>
+                    <textarea class="form-control"
+                              id="feedback-text"
+                              rows="4"
+                              placeholder="כתבו כאן את המשוב שלכם..."></textarea>
+                </div>
+
+                <!-- Likert 1: תרומה אישית -->
+                <fieldset class="mb-4">
+                    <legend class="form-label">
+                        עד כמה הקורס תרם לך?
+                    </legend>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="small">במידה נמוכה</span>
+                        <div class="d-flex justify-content-center flex-grow-1 gap-3">
+                            <input type="radio" class="form-check-input" name="q-contribution" id="q-contribution-1" value="1">
+                            <input type="radio" class="form-check-input" name="q-contribution" id="q-contribution-2" value="2">
+                            <input type="radio" class="form-check-input" name="q-contribution" id="q-contribution-3" value="3">
+                            <input type="radio" class="form-check-input" name="q-contribution" id="q-contribution-4" value="4">
+                            <input type="radio" class="form-check-input" name="q-contribution" id="q-contribution-5" value="5">
+                        </div>
+                        <span class="small">במידה רבה</span>
+                    </div>
+                </fieldset>
+
+                <!-- Likert 2: המלצה לחברים -->
+                <fieldset class="mb-4">
+                    <legend class="form-label">
+                        האם תמליץ/י על הקורס לחברים?
+                    </legend>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="small">לא בכלל</span>
+                        <div class="d-flex justify-content-center flex-grow-1 gap-3">
+                            <input type="radio" class="form-check-input" name="q-recommend" id="q-recommend-1" value="1">
+                            <input type="radio" class="form-check-input" name="q-recommend" id="q-recommend-2" value="2">
+                            <input type="radio" class="form-check-input" name="q-recommend" id="q-recommend-3" value="3">
+                            <input type="radio" class="form-check-input" name="q-recommend" id="q-recommend-4" value="4">
+                            <input type="radio" class="form-check-input" name="q-recommend" id="q-recommend-5" value="5">
+                        </div>
+                        <span class="small">בהחלט כן</span>
+                    </div>
+                </fieldset>
+
+                <!-- Likert 3: רצון לעוד קורס -->
+                <fieldset class="mb-4">
+                    <legend class="form-label">
+                        מידת הרצון ללקיחת קורס נוסף מטעמנו
+                    </legend>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="small">נמוכה</span>
+                        <div class="d-flex justify-content-center flex-grow-1 gap-3">
+                            <input type="radio" class="form-check-input" name="q-next-course" id="q-next-course-1" value="1">
+                            <input type="radio" class="form-check-input" name="q-next-course" id="q-next-course-2" value="2">
+                            <input type="radio" class="form-check-input" name="q-next-course" id="q-next-course-3" value="3">
+                            <input type="radio" class="form-check-input" name="q-next-course" id="q-next-course-4" value="4">
+                            <input type="radio" class="form-check-input" name="q-next-course" id="q-next-course-5" value="5">
+                        </div>
+                        <span class="small">גבוהה</span>
+                    </div>
+                </fieldset>
+
+                <!-- הודעת הצלחה מה-JS -->
+                <div id="survey-message" class="mt-3" aria-live="polite"></div>
+
+                <!-- Submit button -->
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <button type="submit" id="btn-submit" class="btn btn-brand">
+                        שליחת משוב
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-4 border-top">
+    <div class="container">
+        <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-2">
+            <p class="mb-0">קורס מקוון: אתיקה בבינה מלאכותית – משרד החינוך</p>
+            <nav aria-label="ניווט תחתון">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link px-2" href="#hero">לראש העמוד</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+<!-- SCORM wrapper (כמו בשיעורים 1–5) -->
+<script src="SCORM_API_wrapper.js"></script>
+
+<!-- main JS -->
+<script src="main.js"></script>
+</body>
+</html>
