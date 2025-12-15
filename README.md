@@ -25,16 +25,6 @@
 
 טופס שביעות רצון עם שאלות דירוג + שאלה פתוחה
 
-🗂 מבנה הקבצים
-/
-├── index.html              # עמוד הקורס הראשי
-├── styles.css              # עיצוב, RTL, נגישות ו־UX
-├── main.js                 # לוגיקת חיפוש, טופס ושמירה ל־SCORM
-├── SCORM_API_wrapper.js    # עטיפת SCORM (pipwerks)
-├── imsmanifest.xml         # קובץ manifest תואם SCORM 1.2
-└── assets/
-    └── intro.png           # נכסים גרפיים (אם קיימים)
-
 ⚙️ טכנולוגיות ושיטות עבודה
 
 HTML5 + CSS3
